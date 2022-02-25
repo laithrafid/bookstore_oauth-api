@@ -3,9 +3,11 @@ package app
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/laithrafid/bookstore_oauth-api/src/domain/access_token"
+	"github.com/laithrafid/bookstore_oauth-api/src/http"
 	"github.com/laithrafid/bookstore_oauth-api/src/repository/db"
-	"github.com/laithrafid/bookstore_oauth-api/utils/config_utils"
-	"github.com/laithrafid/bookstore_oauth-api/utils/logger_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/config_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/logger_utils"
+	"github.com/mercadolibre/golang-restclient/rest"
 )
 
 var (
@@ -25,5 +27,5 @@ func StartApplication() {
 	router.POST("/oauth/access_token", atHandler.Create)
 
 	logger_utils.Info("starting the application ....")
-	router.Run(config.ServerAddress)
+	router.Run(config.OauthApiAddress)
 }

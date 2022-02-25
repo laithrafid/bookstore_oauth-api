@@ -6,11 +6,13 @@ import (
 
 type Config struct {
 	/// ConfigVarName:Type:MaptoConfigVarNameindotenvfile
-	DBDriver        string `mapstructure:"DB_DRIVER"`
+	MysqlDBDriver   string `mapstructure:"MYSQLDB_DRIVER"`
+	MysqlDBSource   string `mapstructure:"MYSQLDB_SOURCE"`
 	UsersApiAddress string `mapstructure:"USERS_API_ADDRESS"`
 	OauthApiAddress string `mapstructure:"OAUTH_API_ADDRESS"`
 	CassDBSource    string `mapstructure:"CASS_DB_SOURCE"`
 	CassDBKeyspace  string `mapstructure:"CASS_DB_KEYSPACE`
+	LogOutput       string `mapstructure:"LOG_OUTPUT"`
 }
 
 func LoadConfig(path string) (config Config, err error) {

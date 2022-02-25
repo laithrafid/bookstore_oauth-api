@@ -1,16 +1,17 @@
 package rest
 
 import (
+	"encoding/json"
+	"errors"
+	"time"
+
+	"github.com/laithrafid/bookstore_oauth-api/src/domain/users"
 	"github.com/laithrafid/bookstore_oauth-api/src/utils/config_utils"
 	"github.com/laithrafid/bookstore_oauth-api/src/utils/errors_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/logger_utils"
+	"github.com/mercadolibre/golang-restclient/rest"
 )
 
-var (
-	usersRestClient = rest.RequestBuilder{
-		BaseURL: config_utils.ServerAddress//myapiusers,
-		Timeout: 100 * time.Millisecond,
-	}
-)
 type RestUsersRepository interface {
 	LoginUser(string, string) (*users.User, errors_utils.RestErr)
 }
@@ -22,6 +23,15 @@ func NewRestUsersRepository() RestUsersRepository {
 }
 
 func (r *usersRepository) LoginUser(email string, password string) (*users.User, errors_utils.RestErr) {
+	config, err := config_utils.LoadConfig(".")
+	if err != nil {
+		logger_utils.Error("cannot load config of Rest:", err)
+	}
+	usersRestClient := rest.RequestBuilder{
+		BaseURL: config.UsersApiAddress,
+		Timeout: 100 * time.Millisecond,
+	}
+
 	request := users.UserLoginRequest{
 		Email:    email,
 		Password: password,

@@ -5,7 +5,8 @@ import (
 
 	"github.com/laithrafid/bookstore_oauth-api/src/domain/access_token"
 	"github.com/laithrafid/bookstore_oauth-api/src/repository/db"
-	"github.com/laithrafid/bookstore_oauth-api/utils/errors_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/repository/rest"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/errors_utils"
 )
 
 type Service interface {
@@ -52,7 +53,7 @@ func (s *service) Create(request access_token.AccessTokenRequest) (*access_token
 	}
 
 	// Generate a new access token:
-	at := access_token.GetNewAccessToken(user.Id)
+	at := access_token.GetNewAccessToken(user.ID)
 	at.Generate()
 
 	// Save the new access token in Cassandra:

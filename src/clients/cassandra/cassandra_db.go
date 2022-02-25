@@ -13,7 +13,7 @@ var (
 func init() {
 	config, confErr := config_utils.LoadConfig(".")
 	if confErr != nil {
-		logger_utils.Error("cannot load config of application:", err)
+		logger_utils.Error("cannot load config of application:", confErr)
 	}
 
 	// Connect to Cassandra cluster:

@@ -4,10 +4,9 @@ import (
 	"errors"
 
 	"github.com/gocql/gocql"
-
+	"github.com/laithrafid/bookstore_oauth-api/src/clients/cassandra"
 	"github.com/laithrafid/bookstore_oauth-api/src/domain/access_token"
 	"github.com/laithrafid/bookstore_oauth-api/src/utils/errors_utils"
-	"github.com/laithrafid/bookstore_oauth-api/utils/errors_utils"
 )
 
 const (
