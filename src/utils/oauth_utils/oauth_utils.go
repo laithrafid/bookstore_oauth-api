@@ -9,7 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/laithrafid/bookstore_oauth-api/utils/errors_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/config_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/errors_utils"
+	"github.com/laithrafid/bookstore_oauth-api/src/utils/logger_utils"
 	"github.com/mercadolibre/golang-restclient/rest"
 )
 
@@ -19,13 +21,6 @@ const (
 	headerXCallerId = "X-Caller-Id"
 
 	paramAccessToken = "access_token"
-)
-
-var (
-	oauthRestClient = rest.RequestBuilder{
-		BaseURL: "http://localhost:8080",
-		Timeout: 200 * time.Millisecond,
-	}
 )
 
 type accessToken struct {
@@ -96,6 +91,14 @@ func cleanRequest(request *http.Request) {
 }
 
 func getAccessToken(accessTokenId string) (*accessToken, errors_utils.RestErr) {
+	config, err := config_utils.LoadConfig(".")
+	if err != nil {
+		logger_utils.Error("cannot load config of application:", err)
+	}
+	oauthRestClient := rest.RequestBuilder{
+		BaseURL: config.OauthApiAddress,
+		Timeout: 200 * time.Millisecond,
+	}
 	response := oauthRestClient.Get(fmt.Sprintf("/oauth/access_token/%s", accessTokenId))
 	if response == nil || response.Response == nil {
 		return nil, errors_utils.NewInternalServerError("invalid restclient response when trying to get access token",

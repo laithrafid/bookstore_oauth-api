@@ -53,7 +53,7 @@ func (s *service) Create(request access_token.AccessTokenRequest) (*access_token
 	}
 
 	// Generate a new access token:
-	at := access_token.GetNewAccessToken(user.ID)
+	at := access_token.GetNewAccessToken(user.Id)
 	at.Generate()
 
 	// Save the new access token in Cassandra:
