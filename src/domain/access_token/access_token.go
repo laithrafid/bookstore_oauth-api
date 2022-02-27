@@ -14,7 +14,22 @@ import (
 // Web frontend App: ClientId: 123
 // Android APP: ClientId: 234
 // IOS APP: ClientId: 234
-
+// Users API:
+// {
+// "email": "emailaddress@email.com",
+// "paasword": "123abc"
+// }
+// Oauth API:
+// {
+//	"grant_type": "password",
+//	"email": "emailaddress@email.com",
+//	"paasword": "123abc"
+// }
+// {
+//	"grant_type": "client_credentials",
+//	"client_id": "id-123",
+//	"client_secret": "secret-123"
+// }
 const (
 	expirationTime             = 24
 	grantTypePassword          = "password"
