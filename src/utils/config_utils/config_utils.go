@@ -11,8 +11,7 @@ type Config struct {
 	UsersApiAddress string `mapstructure:"USERS_API_ADDRESS"`
 	OauthApiAddress string `mapstructure:"OAUTH_API_ADDRESS"`
 	CassDBSource    string `mapstructure:"CASS_DB_SOURCE"`
-	CassDBKeyspace  string `mapstructure:"CASS_DB_KEYSPACE`
-	LogOutput       string `mapstructure:"LOG_OUTPUT"`
+	CassDBKeyspace  string `mapstructure:"CASS_DB_KEYSPACE"`
 }
 
 func LoadConfig(path string) (config Config, err error) {

@@ -99,6 +99,7 @@ func getAccessToken(accessTokenId string) (*accessToken, errors_utils.RestErr) {
 		BaseURL: config.OauthApiAddress,
 		Timeout: 200 * time.Millisecond,
 	}
+
 	response := oauthRestClient.Get(fmt.Sprintf("/oauth/access_token/%s", accessTokenId))
 	if response == nil || response.Response == nil {
 		return nil, errors_utils.NewInternalServerError("invalid restclient response when trying to get access token",
