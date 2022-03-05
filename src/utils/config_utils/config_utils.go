@@ -10,8 +10,10 @@ type Config struct {
 	MysqlDBSource   string `mapstructure:"MYSQLDB_SOURCE"`
 	UsersApiAddress string `mapstructure:"USERS_API_ADDRESS"`
 	OauthApiAddress string `mapstructure:"OAUTH_API_ADDRESS"`
+	ItemsApiAddress string `mapstructure:"ITEMS_API_ADDRESS"`
 	CassDBSource    string `mapstructure:"CASS_DB_SOURCE"`
 	CassDBKeyspace  string `mapstructure:"CASS_DB_KEYSPACE"`
+	ElasticHosts    string `mapstructure:"ELASTIC_HOSTS"`
 }
 
 func LoadConfig(path string) (config Config, err error) {

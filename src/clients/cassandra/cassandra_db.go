@@ -1,8 +1,6 @@
 package cassandra
 
 import (
-	"time"
-
 	"github.com/gocql/gocql"
 	"github.com/laithrafid/bookstore_oauth-api/src/utils/config_utils"
 	"github.com/laithrafid/bookstore_oauth-api/src/utils/logger_utils"
@@ -19,11 +17,9 @@ func init() {
 	}
 
 	// Connect to Cassandra cluster:
-	cluster := gocql.NewCluster("localhost")
+	cluster := gocql.NewCluster(config.CassDBSource)
 	cluster.Keyspace = config.CassDBKeyspace
 	cluster.Consistency = gocql.Quorum
-	cluster.ConnectTimeout = 20 * time.Millisecond
-	cluster.Timeout = 20 * time.Millisecond
 
 	var err error
 	if session, err = cluster.CreateSession(); err != nil {
