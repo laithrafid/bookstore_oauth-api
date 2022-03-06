@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/laithrafid/bookstore_oauth-api/src/utils/crypto_utils"
-	"github.com/laithrafid/bookstore_oauth-api/src/utils/errors_utils"
+	"github.com/laithrafid/bookstore_utils-go/crypto_utils"
+	"github.com/laithrafid/bookstore_utils-go/errors_utils"
 )
 
 //TODO: Swagger API Documentation

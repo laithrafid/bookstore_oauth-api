@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	atDomain "github.com/laithrafid/bookstore_oauth-api/src/domain/access_token"
 	"github.com/laithrafid/bookstore_oauth-api/src/services/access_token"
-	"github.com/laithrafid/bookstore_oauth-api/src/utils/errors_utils"
+	"github.com/laithrafid/bookstore_utils-go/errors_utils"
 )
 
 type AccessTokenHandler interface {
