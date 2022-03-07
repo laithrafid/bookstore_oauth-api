@@ -6,7 +6,7 @@ require github.com/gin-gonic/gin v1.7.7
 
 require (
 	github.com/gocql/gocql v0.0.0-20220224095938-0eacd3183625
-	github.com/laithrafid/bookstore_utils-go v0.0.1
+	github.com/laithrafid/bookstore_utils-go v0.0.2
 	github.com/mercadolibre/golang-restclient v0.0.0-20170701022150-51958130a0a0
 	github.com/stretchr/testify v1.7.0
 )
