@@ -9,7 +9,7 @@ USER $APP_USER
 ADD src .
 RUN git config \
   --global \
-  url."https://${github_id}:${github_token}@github.com".insteadOf \
+  url."https://${github_id}:${MY_GITHUB_TOKEN}@github.com".insteadOf \
   "https://github.com"
 ENV GOPRIVATE="github.com/laithrafid"
 RUN go mod download
