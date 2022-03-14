@@ -5,10 +5,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/laithrafid/bookstore_oauth-api/src/domain/users"
-	"github.com/laithrafid/bookstore_utils-go/config_utils"
-	"github.com/laithrafid/bookstore_utils-go/errors_utils"
-	"github.com/laithrafid/bookstore_utils-go/logger_utils"
+	"github.com/laithrafid/oauth-api/src/domain/users"
+	"github.com/laithrafid/utils-go/config_utils"
+	"github.com/laithrafid/utils-go/errors_utils"
+	"github.com/laithrafid/utils-go/logger_utils"
 	"github.com/mercadolibre/golang-restclient/rest"
 )
 

@@ -3,10 +3,10 @@ package access_token
 import (
 	"strings"
 
-	"github.com/laithrafid/bookstore_oauth-api/src/domain/access_token"
-	"github.com/laithrafid/bookstore_oauth-api/src/repository/db"
-	"github.com/laithrafid/bookstore_oauth-api/src/repository/rest"
-	"github.com/laithrafid/bookstore_utils-go/errors_utils"
+	"github.com/laithrafid/oauth-api/src/domain/access_token"
+	"github.com/laithrafid/oauth-api/src/repository/db"
+	"github.com/laithrafid/oauth-api/src/repository/rest"
+	"github.com/laithrafid/utils-go/errors_utils"
 )
 
 type Service interface {

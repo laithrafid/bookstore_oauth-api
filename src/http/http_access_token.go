@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	atDomain "github.com/laithrafid/bookstore_oauth-api/src/domain/access_token"
-	"github.com/laithrafid/bookstore_oauth-api/src/services/access_token"
-	"github.com/laithrafid/bookstore_utils-go/errors_utils"
+	atDomain "github.com/laithrafid/oauth-api/src/domain/access_token"
+	"github.com/laithrafid/oauth-api/src/services/access_token"
+	"github.com/laithrafid/utils-go/errors_utils"
 )
 
 type AccessTokenHandler interface {

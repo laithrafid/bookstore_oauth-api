@@ -2,12 +2,12 @@ package app
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/laithrafid/bookstore_oauth-api/src/http"
-	"github.com/laithrafid/bookstore_oauth-api/src/repository/db"
-	"github.com/laithrafid/bookstore_oauth-api/src/repository/rest"
-	"github.com/laithrafid/bookstore_oauth-api/src/services/access_token"
-	"github.com/laithrafid/bookstore_utils-go/config_utils"
-	"github.com/laithrafid/bookstore_utils-go/logger_utils"
+	"github.com/laithrafid/oauth-api/src/http"
+	"github.com/laithrafid/oauth-api/src/repository/db"
+	"github.com/laithrafid/oauth-api/src/repository/rest"
+	"github.com/laithrafid/oauth-api/src/services/access_token"
+	"github.com/laithrafid/utils-go/config_utils"
+	"github.com/laithrafid/utils-go/logger_utils"
 )
 
 var (
