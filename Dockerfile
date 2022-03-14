@@ -7,11 +7,13 @@ ENV MY_GITHUB_TOKEN=$MY_GITHUB_TOKEN
 WORKDIR /app
 USER $APP_USER
 ADD src .
-RUN git config \
+RUN --mount=type=secret,id=MY_GITHUB_TOKEN,required \
+  export MY_GITHUB_TOKEN=$(cat /run/secrets/MY_GITHUB_TOKEN) && \
+  git config \
   --global \
   url."https://${GITHUB_ID}:${MY_GITHUB_TOKEN}@github.com".insteadOf \
   "https://github.com"
-  
+
 ENV GOPRIVATE="github.com/laithrafid"
 RUN go mod download
 RUN go mod verify
